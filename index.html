@@ -596,7 +596,7 @@
       <a href="#proof">Proof</a>
       <a href="#rarity">Rarity</a>
       <a href="#skill">Skill</a>
-      <a href="/spec.json" target="_blank" rel="noopener noreferrer">API Spec</a>
+      <a href="spec.json" target="_blank" rel="noopener noreferrer">API Spec</a>
     </div>
   </nav>
 
@@ -616,7 +616,7 @@
 
       <div class="hero-actions">
         <a class="button button-primary" href="#mint">Start Mint Flow</a>
-        <a class="button button-secondary" href="/spec.json" target="_blank" rel="noopener noreferrer">Read API Spec</a>
+        <a class="button button-secondary" href="spec.json" target="_blank" rel="noopener noreferrer">Read API Spec</a>
       </div>
 
       <div class="intro-card">
@@ -631,7 +631,7 @@
         <div class="stats-item"><strong>Chain</strong> <span id="stat-chain">Base</span></div>
         <div class="stats-item"><strong>Mint</strong> <span id="stat-fee">—</span></div>
         <div class="stats-item"><strong>Contract</strong> <a href="#" id="stat-contract">—</a></div>
-        <div class="stats-item"><strong>Spec</strong> <a href="/spec.json">GET /spec</a></div>
+        <div class="stats-item"><strong>Spec</strong> <a href="spec.json">GET /spec</a></div>
       </div>
     </header>
 
@@ -733,7 +733,7 @@
 
         <p style="margin-top: 1rem; font-size: 12px; color: var(--text-muted);">
           <strong>Machine-readable spec:</strong>
-          <a href="/spec.json" style="color: var(--accent);">GET /spec</a>
+          <a href="spec.json" style="color: var(--accent);">GET /spec</a>
           — for direct agent consumption.
         </p>
       </div>
@@ -769,7 +769,7 @@ clawhub inspect upload-mint</code>
       </p>
       <p>
         <strong>Skill source:</strong>
-        <a href="/skill.md" style="color: var(--accent);">GET /skill</a>
+        <a href="skill.md" style="color: var(--accent);">GET /skill</a>
         (raw SKILL.md) · Publish to
         <a href="https://clawhub.ai" style="color: var(--accent);" target="_blank" rel="noopener noreferrer">ClawHub</a>
         for <code>clawhub install upload-mint</code>
@@ -922,7 +922,7 @@ clawhub inspect upload-mint</code>
       <div class="endpoint">POST /mint</div>
       <div class="sub">model · wallet · prompt (optional) · x402</div>
       <div class="spec-link">
-        <a href="/spec.json">Machine-readable API spec →</a>
+        <a href="spec.json">Machine-readable API spec →</a>
       </div>
     </section>
 
@@ -938,9 +938,9 @@ clawhub inspect upload-mint</code>
   </div>
 
   <script>
-    // Use /spec when served by API, /spec.json for static (GitHub Pages)
-    fetch('/spec')
-      .then((r) => (r.ok ? r.json() : fetch('/spec.json').then((r2) => r2.json())))
+    // Use spec when served by API, spec.json for static (GitHub Pages)
+    fetch('spec')
+      .then((r) => (r.ok ? r.json() : fetch('spec.json').then((r2) => r2.json())))
       .then((spec) => {
         const chainEl = document.getElementById('stat-chain');
         const feeEl = document.getElementById('stat-fee');
