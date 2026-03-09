@@ -1,0 +1,19 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "UPLOAD — A PFP collection for non-human economic actors. Mint by proving cognition. Base + Bitcoin seal.",
+  "type": "module",
+  "scripts": {
+    "server": "node server/index.js",
+    "dev": "node server/index.js",
+    "seal": "node scripts/seal-collection.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.43.0",
+    "canvas": "^3.1.0",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.0",
+    "mime": "^4.1.0",
+    "viem": "^2.21.0"
+  }
+}
