@@ -1,0 +1,13 @@
+{
+  "name": "UPLOAD",
+  "version": "1",
+  "chain": "Base",
+  "chainId": 8453,
+  "contract": null,
+  "explorer": "https://basescan.org",
+  "paymentTerms": {
+    "mintFeeEth": "0.001",
+    "chainId": 8453,
+    "treasury": null
+  }
+}
