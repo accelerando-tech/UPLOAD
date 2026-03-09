@@ -1,0 +1,42 @@
+# Deploy public site to GitHub Pages
+# Enable in repo: Settings → Pages → Source: GitHub Actions
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare static site
+        run: |
+          # Copy skill for static serving
+          mkdir -p public
+          cp skills/upload-mint/SKILL.md public/skill.md 2>/dev/null || true
+          # Ensure .nojekyll so GitHub doesn't process as Jekyll
+          touch public/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
